@@ -1,0 +1,12 @@
+Group Name: The Health Nuts
+Member info:
+Kendall Zettlmeier, kendall@zettlmeier.com, online
+Kevin Looft, klooft@mail.depaul.edu, online
+Zachary Zimmer, ozu.rocks@gmail.com, online
+Mohammadsaleh Gharehdaghi, mogharehdaghi@yahoo.com, in-class
+Harika Rallapalli, harikarallapalli1@gmail.com, in-class
+Chosen Data: 2013-2014 National Health and Nutrition Examination Survey dataset which includes data on 3,787 people such as race, sex, height, 
+weight, BMI, and whether or not they are obese.  We plan to take the data and try to visualize which factors effect health in terms of obesity.
+The data is from https://www.kaggle.com/cdc/national-health-and-nutrition-examination-survey
+
+Comments: N/A
