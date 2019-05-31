@@ -4,12 +4,15 @@
         <link rel="stylesheet" href="styles/styles.css">
         <script src="https://d3js.org/d3.v4.min.js"></script>
         <script src="js/treeMapHelper.js"></script>
+        <script src="js/pieChartObeseFlag.js"></script>
         <title>Health and Nutrition Visualization Project</title>
     </head>
     <body>
         <svg id="treeMap" width="1000" height="400"></svg>
+        <div id="bmiPie" style="height: 400px; width: 400px"></div>
         <script type="text/javascript">
             getDataFile();
+            PieChartObeseFlagViz().drawPieChart('bmiPie');
         </script>
     </body>
 </html>

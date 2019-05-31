@@ -6,3 +6,12 @@ tspan:last-child {
   font-size: 9px;
   fill-opacity: 0.7;
 }
+
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
