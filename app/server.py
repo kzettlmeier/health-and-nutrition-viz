@@ -11,6 +11,14 @@ ageByGroupReader = csv.reader(open("./app/data/nhanes_dataset_agebygroup.csv"))
 ageByGroupHeader = ageByGroupReader.next()
 ageByGroupStringData = [ row for row in ageByGroupReader ]
 
+heightByGroupReader = csv.reader(open("./app/data/nhanes_dataset_heightbygroup.csv"))
+heightByGroupHeader = heightByGroupReader.next()
+heightByGroupStringData = [ row for row in heightByGroupReader ]
+
+weightByGroupReader = csv.reader(open("./app/data/nhanes_dataset_weightbygroup.csv"))
+weightByGroupHeader = weightByGroupReader.next()
+weightByGroupStringData = [ row for row in weightByGroupReader ]
+
 # take a list of data rows and make CSV text
 def dataToCSVStr(header, dataList):
     csvStr = ",".join(header) + "\n"
@@ -30,6 +38,14 @@ def data():
 @app.route('/ageByGroupData')
 def ageByGroupData():
     return dataToCSVStr(ageByGroupHeader, ageByGroupStringData)
+
+@app.route('/heightByGroupData')
+def heightByGroupData():
+    return dataToCSVStr(heightByGroupHeader, heightByGroupStringData)
+
+@app.route('/weightByGroupData')
+def weightByGroupData():
+    return dataToCSVStr(weightByGroupHeader, weightByGroupStringData)
 
 @app.after_request
 def add_header(r):

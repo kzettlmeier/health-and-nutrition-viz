@@ -15,3 +15,12 @@ tspan:last-child {
 .arc path {
   stroke: #fff;
 }
+
+.container {
+  display: block;
+}
+
+#treeChoice {
+  display: inline-block;
+  vertical-align: top;
+}

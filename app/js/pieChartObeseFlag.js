@@ -1,6 +1,6 @@
 var PieChartObeseFlagViz = function () {
     var newPieChart = {
-        drawPieChart: function (id) {
+        drawPieChart: function (id, column, groupValue) {
             const canvas = document.querySelector('#' + id);
             const width = canvas.offsetWidth,
                 height = canvas.offsetHeight,
@@ -23,6 +23,9 @@ var PieChartObeseFlagViz = function () {
                     return d;
                 });
 
+            // delete the old svg
+            d3.selectAll("#" + id + " > *").remove();
+
             var svg = d3.select("#" + id).append("svg")
                 .attr("width", width)
                 .attr("height", height)
@@ -40,7 +43,7 @@ var PieChartObeseFlagViz = function () {
                 var obeseCount = 0;
                 var notObeseCount = 0;
                 data.forEach(d => {
-                    if (d[prop]) {
+                    if (d[prop] && d[column] === groupValue) {
                         dataCount++;
                         if (d[prop] === 'TRUE') {
                             dataGroups[1]++;
