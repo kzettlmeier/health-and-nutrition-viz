@@ -1,0 +1,169 @@
+\documentclass[12pt]{thesis}
+\usepackage{fullpage, graphicx, psfrag}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{color, soul}
+\usepackage{graphics}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage[colorlinks]{hyperref}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+
+\hypersetup{linkcolor=blue}
+
+
+\thispagestyle{empty}
+%\pagestyle{myheadings} \markright{}
+\renewcommand{\baselinestretch}{1.75}
+\setlength{\topmargin}{0in} \setlength{\textheight}{8.75in}
+\setlength{\textwidth}{6.3in}
+ \setlength{\oddsidemargin}{0in}
+\partopsep=-0.10in
+
+\addtolength{\oddsidemargin}{-0.875in}
+\addtolength{\evensidemargin}{-0.875in}
+\addtolength{\textwidth}{1.5in}
+\lstset{framesep=10pt}
+\lstset{xleftmargin=10pt, xrightmargin=10pt}
+\lstset{breaklines}
+
+\newcommand{\mathb}[1]{\mbox{\boldmath$#1$}}
+\newcommand{\bx}{\mbox{\boldmath$x$}}
+\newcommand{\bX}{\mbox{\boldmath$X$}}
+\newcommand{\by}{\mbox{\boldmath$y$}}
+\newcommand{\bb}{\mbox{\boldmath$b$}}
+\newcommand{\bY}{\mbox{\boldmath$Y$}}
+\newcommand{\bv}{\mbox{\boldmath$v$}}
+\newcommand{\bz}{\mbox{\boldmath$z$}}
+\newcommand{\bw}{\mbox{\boldmath$w$}}
+\newcommand{\bW}{\mbox{\boldmath$W$}}
+\newcommand{\bbeta}{\mbox{\boldmath$\beta$}}
+\newcommand{\bgamma}{\mbox{\boldmath$\gamma$}}
+\newcommand{\blambda}{\mbox{\boldmath$\lambda$}}
+\newcommand{\btheta}{\mbox{\boldmath$\theta$}}
+\newcommand{\bphi}{\mbox{\boldmath$\phi$}}
+\newcommand{\sumk}{\sum_{i=1}^k}
+\newcommand{\maxk}{\max_{1\leq i \leq k}}
+\newcommand{\mink}{\min_{1\leq i \leq k}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\numberwithin{figure}{section}
+
+\begin{document} \begin{center}{\large{\sf Draft title for CSC 595 Report}}\end{center}
+\sloppy
+\begin{spacing}{1.70}
+
+\begin{center}
+{\bf {\sf Authors:}}\\
+{\sf CSC 595 \\
+...}\\
+\end{center}
+
+\end{spacing}
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+
+\newpage
+{\section{Introduction and Data Description}}
+{\sf Data Introduction and Overall Summary}\\
+The NHANES is a large scale longitudinal database created by the Centers for Disease Control and Prevention (CDC) to collected data from a sub-sampling of the United States population.  The data includes interview data, physical examinations to include vital signs (systolic and diastolic blood pressure, height, weight, BMI, ...) as dental information, laboratory measurements (i.e. glucose or HBA1C values for diabetes), and demographics information.  The purpose of this data is set national standards (i.e. BMI percentile measurements standardized by age and sex), track health data for diseases like cardiovascular disease or diabetes to shape public policy, or provide data for international research organizations and academic institutions for many purposes.  Please see the following example of areas which have used this data: Iranpour at al (2019) looked at the inverse relationship between amount of caffeine consumed and symptoms of depression; Wang at al (2018) looked at the relationship between the cadmium in the blood and both blood pressure and obesity; Howell et al (2017) looked at the mortality rate of Mexican American adults in relation to their BMI/BMI percentile as well as demographic information.
+
+The focus of the interactive tool as well as this report is to provide summaries of obesity data collected in NHANES.  Obesity is a serious problem as documented by the CDC and World Health Organization (WHO) which has led to an increase in many diseases ranging from cardiovascular disease to diabetes worldwide.  Hales, Carrol, Fryar, and Ogden (2017) documented the incidence of obesity in the united states based on different demographic data based on a publication within that organization from 20165- 2016.  This paper presented this information through bar charts to overall counts by demographic groups as well as line charts to show the incidence rates within the time frame of 2015-2016. They also showed line plots overtime from 1999 to put these results in a general context.  Thompson et al (2007) explored the impact of childhood obesity upon later health effects and identified risk factors for long term health.  In this study the long terms impacts for how the development of cardiovascular disease were examined to see impact upon children as well as effects within adulthood.  The Centers for Disease Control and Prevention looked at incidence of diabetes with regards to many risk factors including obesity (2011).  Ford ES (2005) summarized the risk factors for both cardiovascular disease and diabetes and indicated the link between both diseases and obesity.
+
+This interactive tool will provide a summary of the prevalence of obesity using the NHANES data.  This will due this for different demographics variables to show the prevalence based on variables like age.  Variables were also generated showing the continuous variables like age, height, and weight binned for use in tree or treemap tables.  It was felt that from the clinical perspective these were good as they mimicked clinical flow diagrams.  Thus this would be good visualization approaches based on how clinicians look at diagnosis strategies based on flow charts. 
+
+
+\vspace{5 mm}
+
+{\sf Data Description}\\
+The data included in our combined dataset includes the following:
+\begin{longtable}{|p{5cm}|p{1.4cm}|c|p{2cm}|p{6.5cm}|}
+\hline
+\multicolumn{5}{|c|}{Summary of Variables}\\
+\hline
+Variable Name&Units&Type&Labels&Description\\
+\hline
+Sequence Number &&Categorical& & Primary key for all csv files for NHANES\\
+\hline
+Age &Years&Integer& & Age at time of the vital sign measurement in years\\
+\hline
+Age Grouping&&Categorical&21-30, 31-40,... &Derived based on ten year intervals\\
+\hline
+Height&cm&float with 1-decimal& & \\
+\hline
+Height Grouping&&Categorical&151-175, 176-200, ...& Derived\\
+\hline
+Weight&kg&float with 1-decimal&  & \\
+\hline
+Weight Grouping&&Categorical&71-80, 81-90, ...& Derived\\
+\hline
+BMI&$\frac{kg}{m^2}$&float with 1-decimal&  &Derived based on height and weight \\
+\hline
+Systolic BP&$mmHg$&float with 1-decimal&  & \\
+\hline
+Diastolic BP&$mmHg$&float with 1-decimal&  & \\
+\hline
+Total Cholesterol&$\frac{mg}{dL}$&integer&  & \\
+\hline
+Obesity&&Categorical& TRUE, FALSE &TRUE = Obese, FALSE = Not Obese \\
+\hline
+\end{longtable}
+
+The data contains the overall key as well as important vital sign variables such as height, weight, BMI, and blood pressure.  Some variables have been derived to create categorical groupings.  This makes sense as there may be much change year to year for most people under 40 (in the elderly population there would be more impact upon health even from year to year or even month to month).  Yet there are significant medical issue which appear from decade to decade as the health problems for a 20 year old and different than a 40 year old.  They also allow for these variables to be used in our visualizations such as treemaps.  The same is true for the height and weight groupings.  The categorical bins allow for the binning of subjects in the space filling approaches to expand to more detailed data on obesity within those groupings.
+
+
+
+
+{\sf Data Summary}\\
+
+{\sf Data Cleaning}\\
+
+
+\newpage
+
+
+{\section{Description of Interactive Visualization Approach}}
+
+\newpage
+
+{\sf References}
+
+[1] Centers of Disease Control and Prevention. National diabetes factor sheet: national estimates and general information on diabetes and prediabetes in the United States, 2011. US Department of Health and Human Services, Centers for Disease Control and Prevention, 1(1), 2568-69.
+
+[2] Ford ES (2005). Risks for all-cause mortality, cardiovascular disease, and diabetes associated with metabolic syndrome: a summary of the evidence, Diabetes Cares, 28(7), 1769-1778.
+
+[3] Hales, CM, Carrol, MD, Fryar, CD, and Ogden, CL (2017). Prevalence of obesity among adults and youth: United States, 2015-2016.
+
+[4] Howell, CR, Fontaine, K, Ejima, K, Ness, KK, et al (2017). Maximum lifetime body mass index and mortality in Mexican American adults: the National Health and Nutritional Examination Survey III (1988-1994) and NHANES 1999-2010. Preventing Chronic Disease, 1545-1151(14).
+
+[5] Iranpour, S. and Sabour S (2019). Inverse Association between caffeine intake and depression symptoms in US adults: data from National Health and Nutritional Examination Survey (NHANES) 2005-2006. Psychiatry Research, 1872-7123(271), 732-739.
+
+[6] Thompson, DR, Obarzanek, E, Franko, DL, Barton, BA, Morrison, J, Biro, FM, Daniels, SR, Striegel-Moore, RH (2007).  Childhood overweight and cardiovascular disease risk factors: the National Heart, Lung, and Blood Institute Growth and Health Study. The Journal of Pediatrics, 150(1), 18-25. 
+
+[7] Wang Q, Wei S (2018). Cadmium affects blood pressure and negatively interacts with obesity: Findings in the NHANES 1999-2014. The Science of the Total Environment, 1879-1026(643), 270-276.
+
+
+
+\newpage
+{\sf Appendix Code}
+
+\small{
+If we want to have code or snippets of code in an appendix
+}
+\end{document}
