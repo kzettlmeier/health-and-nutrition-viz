@@ -15,7 +15,7 @@ var PieChartObeseFlagViz = function () {
 
             var labelArc = d3.arc()
                 .outerRadius(radius - 100)
-                .innerRadius(radius - 50);
+                .innerRadius(radius - 100);
 
             var pie = d3.pie()
                 .sort(null)
