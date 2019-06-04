@@ -7,6 +7,13 @@ tspan:last-child {
   fill-opacity: 0.7;
 }
 
+.title > p {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .arc text {
   font: 10px sans-serif;
   text-anchor: middle;
@@ -16,16 +23,69 @@ tspan:last-child {
   stroke: #fff;
 }
 
-.container {
+.top-container {
+  height: 400px;
+  width: 615px;
   display: block;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.bottom-container {
+  height: 400px;
+  width: 1200px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 25px;
 }
 
 #treeChoice {
-  display: inline-block;
-  vertical-align: top;
+  float: left;
+  display: inline;
+  width: 115px;
+  margin: 170px 0;
 }
 
+#treeTitle {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+#treeMap {
+  float: right;
+  display: inline;
+  width: 500px;
+  margin: 0 auto;
+}
 
 .sub-charts {
+  display: inline-block;
+}
 
+.pieChart {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+#obesityPie {
+  height: 400px; 
+  width: 400px;
+  display: inline-block;
+}
+
+#cholesterolPie {
+  height: 400px; 
+  width: 400px;
+  display: inline-block;
+}
+
+#obesityTitle {
+  text-align: center;
+  font-weight: bold;
+}
+
+#cholesterolTitle {
+  text-align: center;
+  font-weight: bold;
 }

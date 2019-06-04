@@ -12,16 +12,28 @@
         <title>Health and Nutrition Visualization Project</title>
     </head>
     <body>
-        <div class="container">
+        <div class="title">
+            <p>2013-2014 National Health and Nutrition Survey Examination</p>
+        </div>
+        <div class="top-container">
             <div id="treeChoice">
                 <input type="radio" name="treeChoice" value="age" checked> Age<br>
                 <input type="radio" name="treeChoice" value="height"> Height (cm)<br>
                 <input type="radio" name="treeChoice" value="weight"> Weight (kg)<br>
             </div>
-            <svg id="treeMap" width="1000" height="400"></svg>
-            <div class="sub-charts" style="display: inline-block;">
-                <div id="obesityPie" style="height: 400px; width: 400px;display: inline-block;"></div>
-                <div id="cholesterolPie" style="height: 400px; width: 400px;display: inline-block;"></div>
+            <div id="treeTitle">Participants by Age</div>
+            <svg id="treeMap" width="900" height="400"></svg>
+        </div>
+        <div class="bottom-container">
+            <div class="sub-charts">
+                <div class="pieChart">
+                    <div id="obesityTitle"></div>
+                    <div id="obesityPie"></div>
+                </div>
+                <div class="pieChart">
+                    <div id="cholesterolTitle"></div>
+                    <div id="cholesterolPie"></div>
+                </div>
             </div>
         </div>
         <script type="text/javascript">
@@ -31,13 +43,19 @@
             createTreemap(dataset, dispatch);
             // Watch for changes to radio button to change tree
             $("input[name='treeChoice']").change(function(e){
+                var inputChoice = $(this).val();
                 // remove the svgs before rendering new svgs
                 d3.select("#treeMap > *").remove();
                 d3.selectAll("#bmiPie > *").remove();
-                createTreemap($(this).val(), dispatch);
+                createTreemap(inputChoice, dispatch);
+
+                // Set title
+                $("#treeTitle").text("Participants by " + inputChoice.charAt(0).toUpperCase() + inputChoice.slice(1));
             });
 
             dispatch.on("selected", function(groupValue, column) {
+                $("#obesityTitle").text("Obesity for " + column + ": " + groupValue);
+                $("#cholesterolTitle").text("Cholesterol for " + column + ": " + groupValue);
                 PieChartObeseFlagViz().drawPieChart('obesityPie', column, groupValue);
                 PieChartCholesterol().draw('cholesterolPie', column, groupValue);
             });
