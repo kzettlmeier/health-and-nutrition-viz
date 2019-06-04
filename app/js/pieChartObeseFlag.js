@@ -78,6 +78,9 @@ var PieChartObeseFlagViz = function () {
                     .text(function (d) {
                         return dataLabels[d.index];
                     });
+
+                d3.select("#" + id + "_label")
+                    .style("display", "block");
             })
         }
     };

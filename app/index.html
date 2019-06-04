@@ -9,6 +9,7 @@
         <script src="js/treeMapHelper.js"></script>
         <script src="js/pieChartObeseFlag.js"></script>
         <script src="js/pieChartCholesterol.js"></script>
+        <script src="js/pieChartBMI.js"></script>
         <title>Health and Nutrition Visualization Project</title>
     </head>
     <body>
@@ -19,10 +20,22 @@
                 <input type="radio" name="treeChoice" value="weight"> Weight (kg)<br>
             </div>
             <svg id="treeMap" width="1000" height="400"></svg>
-            <div class="sub-charts" style="display: inline-block;">
-                <div id="obesityPie" style="height: 400px; width: 400px;display: inline-block;"></div>
-                <div id="cholesterolPie" style="height: 400px; width: 400px;display: inline-block;"></div>
+            <div class="sub-charts" >
+                <div class="sub-chart">
+                    <label id="obesityPie_label" style="display: none">Obesity levels</label>
+                    <div id="obesityPie" style="height: 400px; width: 400px;"></div>
+                </div>
+                <div class="sub-chart">
+                    <label id="cholesterolPie_label" style="display: none">Cholesterol levels (mg/dL)</label>
+                    <div id="cholesterolPie" style="height: 400px; width: 400px;"></div>
+                </div>
+                <div class="sub-chart">
+                    <label id="bmiPie_label" style="display: none">BMI levels (kg/m**2)</label>
+                    <div id="bmiPie" style="height: 400px; width: 400px;"></div>
+                </div>
+                <label id="subChartLabel" style="display: none;">*Percentages rounded to nearest whole number</label>
             </div>
+
         </div>
         <script type="text/javascript">
             var dispatch = d3.dispatch("selected");
@@ -40,6 +53,7 @@
             dispatch.on("selected", function(groupValue, column) {
                 PieChartObeseFlagViz().drawPieChart('obesityPie', column, groupValue);
                 PieChartCholesterol().draw('cholesterolPie', column, groupValue);
+                PieChartBMI().draw('bmiPie', column, groupValue);
             });
         </script>
     </body>

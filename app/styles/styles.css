@@ -27,5 +27,11 @@ tspan:last-child {
 
 
 .sub-charts {
+  padding: 8px;
+  text-align: center;
+}
 
+.sub-chart {
+  width: 33%;
+  display: inline-block;
 }
