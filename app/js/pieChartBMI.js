@@ -44,27 +44,32 @@ var PieChartBMI = function () {
                     {
                         count: 0,
                         level: [0, 17],
-                        label: '12-17'
+                        label: '12-17',
+                        rgb : 'rgb(0, 153, 224)'
                     },
                     {
                         count: 0,
                         level: [17, 23],
-                        label: '18-23'
+                        label: '18-23',
+                        rgb : 'rgb(0, 224, 105)'
                     },
                     {
                         count: 0,
                         level: [23, 29],
-                        label: '24-29'
+                        label: '24-29',
+                        rgb : 'rgb(222, 230, 0)'
                     },
                     {
                         count: 0,
                         level: [29, 35],
-                        label: '30-35'
+                        label: '30-35',
+                        rgb : 'rgb(230, 180, 0)'
                     },
                     {
                         count: 0,
                         level: [35, 100],
-                        label: '36-42'
+                        label: '36-42',
+                        rgb : 'rgb(255, 0, 0)'
                     }
                 ];
 
@@ -85,9 +90,11 @@ var PieChartBMI = function () {
                 });
                 var dataGroups = [];
                 var dataLabels = [];
+                var colors = [];
                 levels.forEach(l => {
                     dataGroups.push(l.count);
                     dataLabels.push(l.label);
+                    colors.push(l.rgb);
                     l.percentage = Math.round(l.count/dataCount * 100) + '%';
                 });
 
@@ -99,7 +106,7 @@ var PieChartBMI = function () {
                 g.append("path")
                     .attr("d", arc)
                     .style("fill", function (d) {
-                        return color(d.data);
+                        return colors[d.index];
                     });
 
                 g.append("text")

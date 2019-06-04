@@ -67,7 +67,19 @@ var PieChartObeseFlagViz = function () {
                 g.append("path")
                     .attr("d", arc)
                     .style("fill", function (d) {
-                        return color(d.data);
+
+                        if(d.index==1)
+                        {
+                        var r = 255;
+                        var x=Math.round( (notObeseCount / dataCount)*155+30);
+                        var rgb = 'rgb('+(r)+', '+(x)+', '+(x)+')'; return rgb;
+                        }
+                        else
+                        {
+                            var r = 255;
+                            var y=Math.round( (obeseCount / dataCount)*155+30);
+                            var rgb = 'rgb('+(y)+', '+(r)+', '+(y)+')'; return rgb;
+                        }
                     });
 
                 g.append("text")

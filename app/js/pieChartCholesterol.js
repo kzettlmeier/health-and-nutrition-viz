@@ -44,32 +44,38 @@ var PieChartCholesterol = function () {
                     {
                         count: 0,
                         level: [0, 160],
-                        label: '<160'
+                        label: '<160',
+                        rgb : 'rgb(25, 230, 0)'
                     },
                     {
                         count: 0,
                         level: [161, 180],
-                        label: '161-181'
+                        label: '161-181',
+                        rgb : 'rgb(62, 205, 0)'
                     },
                     {
                         count: 0,
                         level: [181, 200],
-                        label: '181-200'
+                        label: '181-200',
+                        rgb : 'rgb(100, 160, 1)'
                     },
                     {
                         count: 0,
                         level: [201, 220],
-                        label: '201-220'
+                        label: '201-220',
+                        rgb : 'rgb(140, 120, 1)'
                     },
                     {
                         count: 0,
                         level: [221, 240],
-                        label: '221-240'
+                        label: '221-240',
+                        rgb : 'rgb(180, 85, 1)'
                     },
                     {
                         count: 0,
                         level: [241, 1000],
-                        label: '>240'
+                        label: '>240',
+                        rgb : 'rgb(220, 30, 0)'
                     }
                 ];
 
@@ -90,9 +96,11 @@ var PieChartCholesterol = function () {
                 });
                 var dataGroups = [];
                 var dataLabels = [];
+                var colors = [];
                 levels.forEach(l => {
                     dataGroups.push(l.count);
                     dataLabels.push(l.label);
+                    colors.push(l.rgb);
                     l.percentage = Math.round(l.count/dataCount * 100) + '%';
                 });
 
@@ -104,7 +112,7 @@ var PieChartCholesterol = function () {
                 g.append("path")
                     .attr("d", arc)
                     .style("fill", function (d) {
-                        return color(d.data);
+                        return colors[d.index];
                     });
 
                 g.append("text")
