@@ -9,7 +9,7 @@ tspan:last-child {
 
 .title > p {
   font-weight: bold;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   margin: 0 auto;
 }
@@ -28,7 +28,7 @@ tspan:last-child {
   width: 615px;
   display: block;
   margin: 0 auto;
-  padding-top: 25px;
+  padding-top: 10px;
 }
 
 .bottom-container {
@@ -43,7 +43,7 @@ tspan:last-child {
   float: left;
   display: inline;
   width: 115px;
-  margin: 170px 0;
+  margin: 20px auto;
 }
 
 #treeTitle {
@@ -61,11 +61,7 @@ tspan:last-child {
 
 .sub-charts {
   display: inline-block;
-}
-
-.pieChart {
-  display: inline-block;
-  margin-top: 10px;
+  padding-top: 10px;
 }
 
 #obesityPie {
@@ -80,12 +76,16 @@ tspan:last-child {
   display: inline-block;
 }
 
-#obesityTitle {
-  text-align: center;
-  font-weight: bold;
+.sub-chart {
+  width: 33%;
+  display: inline-block;
 }
 
-#cholesterolTitle {
+#subChartLabel {
+  float: right;
+}
+
+.bottom-container > .sub-charts > .sub-chart > label {
   text-align: center;
   font-weight: bold;
 }

@@ -1,4 +1,4 @@
-var PieChartCholesterol = function () {
+var PieChartBMI = function () {
     var newChart = {
         draw: function (id, column, groupValue) {
             const canvas = document.querySelector('#' + id);
@@ -43,37 +43,32 @@ var PieChartCholesterol = function () {
                 var levels = [
                     {
                         count: 0,
-                        level: [0, 160],
-                        label: '<160'
+                        level: [0, 17],
+                        label: '12-17'
                     },
                     {
                         count: 0,
-                        level: [161, 180],
-                        label: '161-181'
+                        level: [17, 23],
+                        label: '18-23'
                     },
                     {
                         count: 0,
-                        level: [181, 200],
-                        label: '181-200'
+                        level: [23, 29],
+                        label: '24-29'
                     },
                     {
                         count: 0,
-                        level: [201, 220],
-                        label: '201-220'
+                        level: [29, 35],
+                        label: '30-35'
                     },
                     {
                         count: 0,
-                        level: [221, 240],
-                        label: '221-240'
-                    },
-                    {
-                        count: 0,
-                        level: [241, 1000],
-                        label: '>240'
+                        level: [35, 100],
+                        label: '36-42'
                     }
                 ];
 
-                const prop = 'Cholesterol (mg/dL)';
+                const prop = 'Body Mass Index (kg/m**2)';
                 var dataCount = 0;
                 data.forEach(d => {
                     if (d[prop] && d[column] === groupValue && d[prop] !== '0') {
@@ -127,8 +122,6 @@ var PieChartCholesterol = function () {
                     });
 
                 d3.select("#" + id + "_label")
-                    .style("display", "block");
-                d3.select("#subChartLabel")
                     .style("display", "block");
             })
         }
