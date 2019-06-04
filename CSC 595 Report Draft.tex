@@ -137,8 +137,15 @@ The data contains the overall key as well as important vital sign variables such
 
 \newpage
 
-
 {\section{Description of Interactive Visualization Approach}}
+
+\newpage
+
+{\section{Individual Reports}}
+{\sf Kendall Zettlmeier}\\
+The work that I did for the project, started with setting up the team with a GitHub repository where the team could collaborate on the project together and store all of our code and deliverables.  I also got the team started with deliverable 0 by creating the text file to be turned in and giving a description of the dataset that the team chose with a brief introduction on what we were going to be doing with the data.  I was also able to pull down some data via the Kaggle site to match multiple CSVs into 1 CSV by create an combined excel workbook and matching the survey participants SEQN numbers to each CSV via a VLOOKUP excel function, I then pulled the correct columns in which we wanted to use for the project.  As far as the actual implementation of the visualization goes, I was able to get the data setup in such a way to use age, weight, and height as heirarchical datasets in which we could create a treemap of the different data chunks.  By splitting the data for age, weight, and height into different groups, it made for visualizing the data into a more managable chunks.  I then set the 3 data chunks to be displayed via treemaps via a generic treemap helper that I created, and set the different treemaps to be viewed based upon the radio selection that was chosen.  I was also able to get the treemap dispatch function setup to send across the clicked group so that we could hook the click up to open up sub pie charts below the treemap.  Finally I was able to collaborate with Kevin on the styling of the web page to align and setup titles for each of the different visualizations.
+
+As far as what I learned from the visualization, is was basically what I expected.  The younger the age group the lower the BMI and cholesterol levels were.  The younger the age, also had fewer obese survey participants.  Since there is a direct correlation to the height and weight to what the BMI was, it wasn't surprising to see that heavier weighted participants had a larger percentage of obesity and high cholesterol.  It was on the otherhand interesting to see the differences in height in which groups had higher amounts of obesity.  I did not necessarily think that the taller groups would have higher percentages of obesity.  I tend to think of most tall people as thin, so it was interesting to see that the tallst group had the highest obesity percentage.
 
 \newpage
 
