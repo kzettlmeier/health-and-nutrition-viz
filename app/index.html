@@ -12,36 +12,38 @@
         <script src="js/pieChartBMI.js"></script>
         <title>Health and Nutrition Visualization Project</title>
     </head>
-    <body>
+    <body bgcolor="#e7e7fa">
         <div class="title">
-            <p>2013-2014 National Health and Nutrition Survey Examination</p>
+            <p class="white-text-with-blue-shadow">2013-2014 National Health and Nutrition Survey Examination</p>
         </div>
+        <div style="border-radius: 13px; border: 3px solid rgb(111, 0, 255); padding: 5px; box-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue; margin-top: 15px; margin-left: 150px; margin-right: 150px; background: white">
         <div class="top-container">
-            <div id="treeChoice">
+            <div id="treeChoice" style="border-radius: 7px; border: 3px solid rgb(111, 0, 255); padding: 5px; box-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue">
                 <input type="radio" name="treeChoice" value="age" checked> Age<br>
                 <input type="radio" name="treeChoice" value="height"> Height (cm)<br>
                 <input type="radio" name="treeChoice" value="weight"> Weight (kg)<br>
             </div>
-            <div id="treeTitle">Participants by Age</div>
-            <svg id="treeMap" width="900" height="400"></svg>
+            <div id="treeTitle" class="shadow1">Participants by Age</div>
+            <svg id="treeMap" width="900" height="400" style="padding: 15px;"></svg>
         </div>
         <div class="bottom-container">
             <div class="sub-charts" >
                 <div class="sub-chart">
-                    <label id="obesityPie_label" style="display: none">Obesity levels</label>
-                    <div id="obesityPie" style="height: 400px; width: 400px;"></div>
+                    <label id="obesityPie_label" class="shadow2" style="display: none">Obesity levels</label>
+                    <div id="obesityPie" style="height: 380px; width: 380px;display:flex; flex-direction: row;"></div>
                 </div>
                 <div class="sub-chart">
-                    <label id="cholesterolPie_label" style="display: none">Cholesterol levels (mg/dL)</label>
-                    <div id="cholesterolPie" style="height: 400px; width: 400px;"></div>
+                    <label id="cholesterolPie_label" class="shadow2" style="display: none">Cholesterol levels (mg/dL)</label>
+                    <div id="cholesterolPie" style="height: 380px; width: 380px;display:flex; flex-direction: row;"></div>
                 </div>
                 <div class="sub-chart">
-                    <label id="bmiPie_label" style="display: none">BMI levels (kg/m**2)</label>
-                    <div id="bmiPie" style="height: 400px; width: 400px;"></div>
+                    <label id="bmiPie_label" class="shadow2" style="display: none">BMI levels (kg/m**2)</label>
+                    <div id="bmiPie" style="height: 380px; width: 380px;"></div>
                 </div>
                 <label id="subChartLabel" style="display: none;">*Percentages rounded to nearest whole number</label>
             </div>
         </div>
+    </div>
         <script type="text/javascript">
             var dispatch = d3.dispatch("selected");
             // On page load find checked value

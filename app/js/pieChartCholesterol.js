@@ -138,6 +138,10 @@ var PieChartCholesterol = function () {
                     .style("display", "block");
                 d3.select("#subChartLabel")
                     .style("display", "block");
+
+                    d3.select("#" + id).append("hr")
+                    .attr("width", 0)
+                    .attr("class", "hr");
             })
         }
     };

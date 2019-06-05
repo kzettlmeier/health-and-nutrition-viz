@@ -93,6 +93,10 @@ var PieChartObeseFlagViz = function () {
 
                 d3.select("#" + id + "_label")
                     .style("display", "block");
+
+                    d3.select("#" + id).append("hr")
+                    .attr("width", 0)
+                    .attr("class", "hr");
             })
         }
     };
