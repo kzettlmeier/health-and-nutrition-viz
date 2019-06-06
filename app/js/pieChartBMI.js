@@ -90,9 +90,15 @@ var PieChartBMI = function () {
                 var colors = [];
                 levels.forEach(l => {
                     dataGroups.push(l.count);
-                    dataLabels.push(l.label);
                     colors.push(l.rgb);
-                    l.percentage = Math.round(l.count/dataCount * 100) + '%';
+                    var percentage = Math.round(l.count/dataCount * 100);
+                    if (percentage >= 1) {
+                        dataLabels.push(l.label);
+                        l.percentage =  percentage + '%';
+                    } else {
+                        dataLabels.push('');
+                        l.percentage = '';
+                    }
                 });
 
                 var g = svg.selectAll(".arc")
