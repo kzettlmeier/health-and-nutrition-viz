@@ -25,7 +25,7 @@ tspan:last-child {
 
 .top-container {
   height: 400px;
-  width: 750px;
+  width: 850px;
   display: block;
   margin: 0 auto;
   padding-top: 7px;
@@ -57,6 +57,7 @@ tspan:last-child {
   display: inline;
   width: 500px;
   margin: 0 auto;
+  margin-right: 160px;
 }
 
 .sub-charts {
@@ -92,24 +93,23 @@ tspan:last-child {
 
 
 .white-text-with-blue-shadow {
-  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
-  color: white;
   font: 1.5em Georgia, serif;
 }
 
 
-.shadow1 {
+.treeTitle {
   font-weight: bold;
   font-size: 30px;
   font: 1.5em Georgia, serif;
+  margin-right: 160px;
 }
 
 .hr { 
   border-width: 0px;
   background-color:#666;
   border: none;
-  box-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
-  height: 360px; 
+  height: 360px;
+  /*margin-left: 2px;*/
 }
 
 

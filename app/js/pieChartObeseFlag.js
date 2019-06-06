@@ -70,15 +70,11 @@ var PieChartObeseFlagViz = function () {
 
                         if(d.index==1)
                         {
-                        var r = 255;
-                        var x=Math.round( (notObeseCount / dataCount)*155+30);
-                        var rgb = 'rgb('+(r)+', '+(x)+', '+(x)+')'; return rgb;
+                        return 'rgb(159, 191, 242)';
                         }
                         else
                         {
-                            var r = 255;
-                            var y=Math.round( (obeseCount / dataCount)*155+30);
-                            var rgb = 'rgb('+(y)+', '+(r)+', '+(y)+')'; return rgb;
+                            return 'rgb(187, 211, 249)';
                         }
                     });
 

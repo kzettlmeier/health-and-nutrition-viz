@@ -6,9 +6,6 @@ var PieChartBMI = function () {
                 height = canvas.offsetHeight,
                 radius = Math.min(width, height) / 2 - 5;
 
-            var color = d3.scaleOrdinal()
-                .range(["#98abc5", "#8a89a6"]);
-
             var arc = d3.arc()
                 .outerRadius(radius - 10)
                 .innerRadius(0);
@@ -45,31 +42,31 @@ var PieChartBMI = function () {
                         count: 0,
                         level: [0, 17],
                         label: '12-17',
-                        rgb : 'rgb(0, 153, 224)'
+                        rgb : 'rgb(187, 211, 249)'
                     },
                     {
                         count: 0,
                         level: [17, 23],
                         label: '18-23',
-                        rgb : 'rgb(0, 224, 105)'
+                        rgb : 'rgb(159, 191, 242)'
                     },
                     {
                         count: 0,
                         level: [23, 29],
                         label: '24-29',
-                        rgb : 'rgb(222, 230, 0)'
+                        rgb : 'rgb(114, 166, 249)'
                     },
                     {
                         count: 0,
                         level: [29, 35],
                         label: '30-35',
-                        rgb : 'rgb(230, 180, 0)'
+                        rgb : 'rgb(73, 139, 244 )'
                     },
                     {
                         count: 0,
                         level: [35, 100],
                         label: '36-42',
-                        rgb : 'rgb(255, 0, 0)'
+                        rgb : 'rgb(33, 102, 211)'
                     }
                 ];
 

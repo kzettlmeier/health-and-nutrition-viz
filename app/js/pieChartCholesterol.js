@@ -45,37 +45,31 @@ var PieChartCholesterol = function () {
                         count: 0,
                         level: [0, 160],
                         label: '<160',
-                        rgb : 'rgb(25, 230, 0)'
+                        rgb : 'rgb(187, 211, 249)'
                     },
                     {
                         count: 0,
-                        level: [161, 180],
-                        label: '161-181',
-                        rgb : 'rgb(62, 205, 0)'
+                        level: [161, 190],
+                        label: '161-190',
+                        rgb : 'rgb(159, 191, 242)'
                     },
                     {
                         count: 0,
-                        level: [181, 200],
-                        label: '181-200',
-                        rgb : 'rgb(100, 160, 1)'
+                        level: [191, 220],
+                        label: '191-220',
+                        rgb : 'rgb(114, 166, 249)'
                     },
                     {
                         count: 0,
-                        level: [201, 220],
-                        label: '201-220',
-                        rgb : 'rgb(140, 120, 1)'
+                        level: [221, 250],
+                        label: '221-250',
+                        rgb : 'rgb(73, 139, 244 )'
                     },
                     {
                         count: 0,
-                        level: [221, 240],
-                        label: '221-240',
-                        rgb : 'rgb(180, 85, 1)'
-                    },
-                    {
-                        count: 0,
-                        level: [241, 1000],
-                        label: '>240',
-                        rgb : 'rgb(220, 30, 0)'
+                        level: [251, 1000],
+                        label: '>250',
+                        rgb : 'rgb(33, 102, 211)'
                     }
                 ];
 
