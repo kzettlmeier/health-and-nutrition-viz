@@ -7,9 +7,9 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
         <script src="js/treeMapHelper.js"></script>
-        <script src="js/pieChartObeseFlag.js"></script>
-        <script src="js/pieChartCholesterol.js"></script>
-        <script src="js/pieChartBMI.js"></script>
+        <script src="js/barChartBMI.js"></script>
+        <script src="js/barChartCholesterol.js"></script>
+        <script src="js/barChartObeseFlag.js"></script>
         <title>Health and Nutrition Visualization Project</title>
     </head>
     <body>
@@ -73,9 +73,9 @@
             dispatch.on("selected", function(groupValue, column) {
                 $("#obesityTitle").text("Obesity for " + column + ": " + groupValue);
                 $("#cholesterolTitle").text("Cholesterol for " + column + ": " + groupValue);
-                PieChartObeseFlagViz().drawPieChart('obesityPie', column, groupValue);
-                PieChartCholesterol().draw('cholesterolPie', column, groupValue);
-                PieChartBMI().draw('bmiPie', column, groupValue);
+                createObesityBarChart('obesityPie', column, groupValue);
+                createCholesterolBarChart('cholesterolPie', column, groupValue);
+                createBmiBarChart('bmiPie', column, groupValue);
             });
         </script>
     </body>

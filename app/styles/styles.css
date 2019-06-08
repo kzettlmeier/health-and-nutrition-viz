@@ -91,11 +91,9 @@ tspan:last-child {
   font-weight: bold;
 }
 
-
 .white-text-with-blue-shadow {
   font: 1.5em Georgia, serif;
 }
-
 
 .treeTitle {
   font-weight: bold;
@@ -109,7 +107,6 @@ tspan:last-child {
   background-color:#666;
   border: none;
   height: 360px;
-  /*margin-left: 2px;*/
 }
 
 
@@ -118,3 +115,5 @@ tspan:last-child {
   font-size: 10px;
   font: 1.0em Georgia, serif;
 }
+
+.bar { fill: steelblue; }
