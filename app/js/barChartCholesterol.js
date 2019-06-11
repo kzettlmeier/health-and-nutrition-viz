@@ -24,27 +24,32 @@ function createCholesterolBarChart(id, column, groupValue) {
             {
                 count: 0,
                 level: [0, 160],
-                label: '<160'
+                label: '<160',
+                rgb : 'rgb(250, 180, 0)'
             },
             {
                 count: 0,
                 level: [161, 190],
-                label: '161-190'
+                label: '161-190',
+                rgb : 'rgb(240, 170, 0)'
             },
             {
                 count: 0,
                 level: [191, 220],
-                label: '191-220'
+                label: '191-220',
+                rgb : 'rgb(230, 160, 0)'
             },
             {
                 count: 0,
                 level: [221, 250],
-                label: '221-250'
+                label: '221-250',
+                rgb : 'rgb(220, 150, 0 )'
             },
             {
                 count: 0,
                 level: [251, 1000],
-                label: '>250'
+                label: '>250',
+                rgb : 'rgb(210, 140, 0)'
             }
         ];
 
@@ -69,11 +74,13 @@ function createCholesterolBarChart(id, column, groupValue) {
         svg.selectAll(".bar")
             .data(levels)
             .enter().append("rect")
-            .attr("class", "bar")
             .attr("x", function(d) { return x(d.label); })
             .attr("width", x.bandwidth())
             .attr("y", function(d) { return y(d.count); })
-            .attr("height", function(d) { return height - y(d.count); });
+            .attr("height", function(d) { return height - y(d.count); })
+            .style("fill", function (d) {
+                return 'rgb(240, 170, 0)';
+            });
 
         // add the x Axis
         svg.append("g")

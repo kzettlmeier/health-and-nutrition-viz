@@ -44,15 +44,18 @@ function createObesityBarChart(id, column, groupValue) {
         x.domain(levels.map(function(d) { return d.label; }));
         y.domain([0, d3.max(levels, function(d) { return d.count; })]);
 
+        var xx=1;
         // append the rectangles for the bar chart
         svg.selectAll(".bar")
             .data(levels)
             .enter().append("rect")
-            .attr("class", "bar")
             .attr("x", function(d) { return x(d.label); })
             .attr("width", x.bandwidth())
             .attr("y", function(d) { return y(d.count); })
-            .attr("height", function(d) { return height - y(d.count); });
+            .attr("height", function(d) { return height - y(d.count); })
+            .attr("fill", function(d) { 
+                    return 'rgb(220, 10, 250)';
+             });
 
         // add the x Axis
         svg.append("g")

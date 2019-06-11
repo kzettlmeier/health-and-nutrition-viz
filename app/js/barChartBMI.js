@@ -24,27 +24,32 @@ function createBmiBarChart(id, column, groupValue) {
             {
                 count: 0,
                 level: [0, 17],
-                label: '12-17'
+                label: '12-17',
+                rgb : 'rgb(0, 140, 230)'
             },
             {
                 count: 0,
                 level: [17, 23],
-                label: '18-23'
+                label: '18-23',
+                rgb : 'rgb(0, 130, 220 )'
             },
             {
                 count: 0,
                 level: [23, 29],
-                label: '24-29'
+                label: '24-29',
+                rgb : 'rgb(0, 120, 210)'
             },
             {
                 count: 0,
                 level: [29, 35],
-                label: '30-35'
+                label: '30-35',
+                rgb : 'rgb(0, 110, 200)'
             },
             {
                 count: 0,
                 level: [35, 100],
-                label: '36-42'
+                label: '36-42',
+                rgb : 'rgb(0, 100, 190)'
             }
         ];
 
@@ -69,11 +74,13 @@ function createBmiBarChart(id, column, groupValue) {
         svg.selectAll(".bar")
             .data(levels)
             .enter().append("rect")
-            .attr("class", "bar")
             .attr("x", function(d) { return x(d.label); })
             .attr("width", x.bandwidth())
             .attr("y", function(d) { return y(d.count); })
-            .attr("height", function(d) { return height - y(d.count); });
+            .attr("height", function(d) { return height - y(d.count); })
+            .style("fill", function (d) {
+                return 'rgb(0, 130, 220 )';
+            });
 
         // add the x Axis
         svg.append("g")
