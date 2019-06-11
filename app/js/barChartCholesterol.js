@@ -79,7 +79,7 @@ function createCholesterolBarChart(id, column, groupValue) {
             .attr("y", function(d) { return y(d.count); })
             .attr("height", function(d) { return height - y(d.count); })
             .style("fill", function (d) {
-                return 'rgb(240, 170, 0)';
+                return 'rgb(0, 200, 100)';
             });
 
         // add the x Axis

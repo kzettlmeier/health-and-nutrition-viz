@@ -54,7 +54,7 @@ function createObesityBarChart(id, column, groupValue) {
             .attr("y", function(d) { return y(d.count); })
             .attr("height", function(d) { return height - y(d.count); })
             .attr("fill", function(d) { 
-                    return 'rgb(220, 10, 250)';
+                    return 'rgb(223, 210, 0)';
              });
 
         // add the x Axis
